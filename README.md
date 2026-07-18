@@ -64,11 +64,13 @@ Generate printable passes with `npm run generate:qr`; output is under `public/de
 ## Deployment
 
 1. Create a Supabase project and apply both migrations and `supabase/seed.sql`.
-2. Import this repository into Vercel.
+2. Import the GitHub repository into Vercel and connect `main` as the production branch.
 3. Add all variables above in Vercel; keep service credentials server-only.
 4. Deploy, then allow the HTTPS origin in Supabase settings.
 5. Verify camera and location permissions on the physical driver phone.
 6. Run the reset and follow [DEMO_SCRIPT.md](DEMO_SCRIPT.md).
+
+Commits pushed to `main` deploy to production automatically. Pull requests receive isolated Vercel Preview deployments using the Preview environment variables.
 
 ## Architecture and safety
 
