@@ -1,0 +1,2 @@
+import { failure,success } from "@/lib/api";import { IDS } from "@/lib/server-demo-store";
+export async function GET(request:Request){const schoolId=new URL(request.url).searchParams.get("schoolId");if(!schoolId)return failure("VALIDATION_ERROR","schoolId is required.",422);return success(schoolId===IDS.sunrise?[{id:IDS.route4,schoolId,name:"Morning Route 4",vehicleId:IDS.bus12,driverUserId:IDS.driver},{id:IDS.route7,schoolId,name:"Morning Route 7",vehicleId:IDS.bus07,driverUserId:IDS.driver}]:[{id:IDS.greenRoute,schoolId,name:"Green Valley Route 1"}])}

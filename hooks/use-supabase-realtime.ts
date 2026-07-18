@@ -1,0 +1,3 @@
+"use client";import { useEffect } from "react";import { useQueryClient } from "@tanstack/react-query";import { RealtimeSubscriptionService } from "@/infrastructure/realtime/realtime-subscription-service";
+export function useSchoolRealtime(schoolId:string){const client=useQueryClient();useEffect(()=>{const service=new RealtimeSubscriptionService();service.subscribeToSchool(schoolId,()=>void client.invalidateQueries());return()=>{void service.close()}},[schoolId,client])}
+export function useParentRealtime(parentId:string){const client=useQueryClient();useEffect(()=>{const service=new RealtimeSubscriptionService();service.subscribeToParent(parentId,()=>void client.invalidateQueries());return()=>{void service.close()}},[parentId,client])}

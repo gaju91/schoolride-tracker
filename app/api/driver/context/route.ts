@@ -1,0 +1,2 @@
+import { success } from "@/lib/api";import { IDS } from "@/lib/server-demo-store";
+export async function GET(){return success({driver:{id:IDS.driver,name:"Ramesh Kumar"},school:{id:IDS.sunrise,name:"Sunrise Public School"},vehicle:{id:IDS.bus12,name:"Bus 12",registrationNo:"RJ14 PB 2045"},routes:[{id:IDS.route4,name:"Morning Route 4"},{id:IDS.route7,name:"Morning Route 7"}],serviceDate:new Date().toLocaleDateString("en-CA",{timeZone:"Asia/Kolkata"})})}

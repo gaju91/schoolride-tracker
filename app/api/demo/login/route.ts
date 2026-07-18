@@ -1,0 +1,3 @@
+import { z } from "zod";import { failure,success } from "@/lib/api";
+const paths={super_admin:"/super-admin",school_admin:"/admin",driver:"/driver",parent:"/parent"} as const;
+export async function POST(request:Request){const parsed=z.object({role:z.enum(["super_admin","school_admin","driver","parent"])}).safeParse(await request.json());if(!parsed.success)return failure("VALIDATION_ERROR","Choose a valid demo role.",422);const response=success({role:parsed.data.role,redirectTo:paths[parsed.data.role]});response.cookies.set("demo_role",parsed.data.role,{httpOnly:false,sameSite:"lax",path:"/",maxAge:86400});return response}

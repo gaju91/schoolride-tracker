@@ -1,0 +1,5 @@
+import { test,expect } from "@playwright/test";
+async function role(page:import("@playwright/test").Page,name:string){await page.goto("/");await page.getByRole("button",{name:new RegExp(name)}).click()}
+test("role entry opens admin dashboard",async({page})=>{await role(page,"School Admin");await expect(page.getByText("Student boarding status")).toBeVisible()});
+test("simulated boarding updates driver and duplicate is rejected",async({page})=>{await role(page,"Driver");await page.getByText("Demo simulation controls").click();await page.getByRole("button",{name:"Aarav valid scan"}).click();await page.getByRole("button",{name:"Confirm Boarding"}).click();await expect(page.getByRole("status")).toContainText("Aarav Sharma boarded");await page.getByRole("button",{name:"Duplicate scan"}).click();await expect(page.getByRole("status")).toContainText("already boarded")});
+test("tenant isolation",async({page})=>{await role(page,"Super Admin");await page.getByText("Green Valley Academy").locator("..").getByRole("button").click();await expect(page.getByText("Ira Kapoor")).toBeVisible();await expect(page.getByText("Aarav Sharma")).toHaveCount(0)});

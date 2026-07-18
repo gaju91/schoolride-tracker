@@ -1,0 +1,5 @@
+alter table schools enable row level security;alter table users enable row level security;alter table students enable row level security;alter table student_passes enable row level security;alter table vehicles enable row level security;alter table routes enable row level security;alter table route_stops enable row level security;alter table student_route_assignments enable row level security;alter table boarding_events enable row level security;alter table parent_notifications enable row level security;
+create policy "demo schools readable" on schools for select to anon using (is_active);
+create policy "demo events realtime readable" on boarding_events for select to anon using (school_id::text=current_setting('request.headers',true)::json->>'x-school-id');
+create policy "demo notifications realtime readable" on parent_notifications for select to anon using (school_id::text=current_setting('request.headers',true)::json->>'x-school-id');
+-- All writes use the service-role server client. Server repositories must still apply explicit school_id predicates.

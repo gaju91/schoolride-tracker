@@ -1,0 +1,2 @@
+import { failure,success } from "@/lib/api";import { dashboard,schools } from "@/lib/server-demo-store";
+export async function GET(request:Request){const url=new URL(request.url),schoolId=url.searchParams.get("schoolId");if(!schoolId||!schools.some(s=>s.id===schoolId))return failure("SCHOOL_NOT_FOUND","A valid schoolId is required.",404);return success(dashboard(schoolId,url.searchParams.get("routeId")||undefined))}

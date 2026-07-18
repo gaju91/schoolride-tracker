@@ -1,0 +1,3 @@
+import type { Metadata,Viewport } from "next";import "./globals.css";import "leaflet/dist/leaflet.css";import { Providers } from "./providers";
+export const metadata:Metadata={title:"SchoolRide Tracker",description:"Fictional school transport boarding discovery POC",manifest:"/manifest.json"};export const viewport:Viewport={themeColor:"#0f766e",width:"device-width",initialScale:1};
+export default function Layout({children}:{children:React.ReactNode}){return <html lang="en"><body><div className="demo-banner">Discovery demo · Fictional data · QR identification (native NFC is not implemented)</div><Providers>{children}</Providers></body></html>}

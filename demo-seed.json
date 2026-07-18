@@ -1,0 +1,177 @@
+{
+  "schools": [
+    {
+      "code": "SPS",
+      "name": "Sunrise Public School",
+      "city": "Jaipur",
+      "timezone": "Asia/Kolkata"
+    },
+    {
+      "code": "GVA",
+      "name": "Green Valley Academy",
+      "city": "Jaipur",
+      "timezone": "Asia/Kolkata"
+    }
+  ],
+  "sunrisePublicSchool": {
+    "driver": {
+      "name": "Ramesh Kumar",
+      "role": "driver"
+    },
+    "parent": {
+      "name": "Neha Sharma",
+      "children": [
+        "Aarav Sharma",
+        "Anaya Singh"
+      ]
+    },
+    "routes": [
+      {
+        "code": "MR-04",
+        "name": "Morning Route 4",
+        "direction": "morning",
+        "vehicle": {
+          "code": "BUS-12",
+          "registrationNo": "RJ14 PB 2045"
+        },
+        "stops": [
+          {
+            "sequence": 1,
+            "name": "Vaishali Nagar",
+            "lat": 26.9124,
+            "lng": 75.7873
+          },
+          {
+            "sequence": 2,
+            "name": "Gandhi Path",
+            "lat": 26.9009,
+            "lng": 75.7478
+          },
+          {
+            "sequence": 3,
+            "name": "Chitrakoot",
+            "lat": 26.895,
+            "lng": 75.748
+          },
+          {
+            "sequence": 4,
+            "name": "Ajmer Road",
+            "lat": 26.9028,
+            "lng": 75.7544
+          },
+          {
+            "sequence": 5,
+            "name": "School Campus",
+            "lat": 26.912,
+            "lng": 75.801
+          }
+        ]
+      },
+      {
+        "code": "MR-07",
+        "name": "Morning Route 7",
+        "direction": "morning",
+        "vehicle": {
+          "code": "BUS-07",
+          "registrationNo": "RJ14 PC 1188"
+        }
+      }
+    ],
+    "students": [
+      {
+        "name": "Aarav Sharma",
+        "grade": "4",
+        "section": "A",
+        "stop": "Vaishali Nagar",
+        "route": "MR-04",
+        "initialStatus": "waiting",
+        "demoToken": "stp_live_aarav_001"
+      },
+      {
+        "name": "Meera Jain",
+        "grade": "5",
+        "section": "B",
+        "stop": "Gandhi Path",
+        "route": "MR-04",
+        "initialStatus": "waiting",
+        "demoToken": "stp_live_meera_002"
+      },
+      {
+        "name": "Riya Gupta",
+        "grade": "3",
+        "section": "A",
+        "stop": "Chitrakoot",
+        "route": "MR-04",
+        "initialStatus": "waiting",
+        "demoToken": "stp_live_riya_003"
+      },
+      {
+        "name": "Kabir Mehta",
+        "grade": "6",
+        "section": "A",
+        "stop": "Vaishali Nagar",
+        "route": "MR-04",
+        "initialStatus": "boarded",
+        "demoToken": "stp_live_kabir_004"
+      },
+      {
+        "name": "Anaya Singh",
+        "grade": "2",
+        "section": "B",
+        "stop": "Gandhi Path",
+        "route": "MR-04",
+        "initialStatus": "boarded"
+      },
+      {
+        "name": "Vivaan Joshi",
+        "grade": "4",
+        "section": "B",
+        "stop": "Chitrakoot",
+        "route": "MR-04",
+        "initialStatus": "boarded"
+      },
+      {
+        "name": "Ishita Verma",
+        "grade": "5",
+        "section": "A",
+        "stop": "Ajmer Road",
+        "route": "MR-04",
+        "initialStatus": "boarded"
+      },
+      {
+        "name": "Arjun Saini",
+        "grade": "3",
+        "section": "C",
+        "stop": "Vaishali Nagar",
+        "route": "MR-04",
+        "initialStatus": "boarded"
+      },
+      {
+        "name": "Myra Agarwal",
+        "grade": "1",
+        "section": "A",
+        "stop": "Gandhi Path",
+        "route": "MR-04",
+        "initialStatus": "boarded"
+      },
+      {
+        "name": "Dev Bansal",
+        "grade": "6",
+        "section": "B",
+        "stop": "Chitrakoot",
+        "route": "MR-04",
+        "initialStatus": "boarded"
+      },
+      {
+        "name": "Route 7 Demo Student",
+        "grade": "5",
+        "section": "C",
+        "stop": "Civil Lines",
+        "route": "MR-07",
+        "initialStatus": "waiting",
+        "demoToken": "stp_live_route7_005"
+      }
+    ],
+    "unknownDemoToken": "stp_unknown_999"
+  }
+}

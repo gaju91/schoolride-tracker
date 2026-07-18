@@ -1,0 +1,2 @@
+import { z } from "zod";import { failure,success } from "@/lib/api";import { resetServerState } from "@/lib/server-demo-store";
+export async function POST(request:Request){const parsed=z.object({confirmation:z.literal("RESET_DEMO")}).safeParse(await request.json());if(!parsed.success)return failure("CONFIRMATION_REQUIRED","Enter RESET_DEMO to reset.",422);resetServerState();return success({resetAt:new Date().toISOString()})}
