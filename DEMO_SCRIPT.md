@@ -2,8 +2,8 @@
 
 ## Before the meeting
 
-1. Run `npm run reset` for a configured Supabase demo project, or use **Reset demo** in each browser-local demo.
-2. Open School Admin on the laptop, Driver on a phone, and Parent in a second profile/device.
+1. Use **Reset demo** on the login or admin screen to restore browser-local seed data.
+2. Open School Admin, Driver, and Parent in separate tabs of the same browser profile so local live updates are shared.
 3. Confirm camera and GPS permissions on the HTTPS deployment.
 4. Print `public/demo-passes/demo-pass-sheet.pdf` or display it on another screen.
 5. Expand driver simulation controls once to confirm all fallbacks.
